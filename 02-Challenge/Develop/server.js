@@ -43,6 +43,10 @@ app.post("/api/notes", (req, res) => {
     
     fs.writeFileSync('db/db.json', JSON.stringify(db));
     res.json(db);
+
+})
+app.delete('/api/notes/:id', (req, res) => {
+  
 })
 
 
