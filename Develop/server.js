@@ -48,7 +48,14 @@ app.post("/api/notes", (req, res) => {
 app.delete('/api/notes/:id', (req, res)  => {
   console.log(req.params)
   console.log(req.params.id)
-  
+  // read db.json
+  let db = fs.readFileSync('db/db.json');
+  // parse data
+  db = JSON.parse(db);
+  console.log(db)
+
+  let note = db.filter(note => note.id !== req.params.id)
+  console.log(note)
 })
 
 
